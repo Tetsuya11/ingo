@@ -41,10 +41,16 @@ AppDelegate *_appDelegate;
     if(_appDelegate.iPath == 0){
         cate = @"合コン";
     }else if(_appDelegate.iPath == 1){
+        cate = @"プログラマー";
+    }else if(_appDelegate.iPath == 2){
+        cate = @"相撲界";
+    }else if(_appDelegate.iPath == 3){
         cate = @"航空業界";
-        
+    }else if(_appDelegate.iPath == 4){
+        cate =@"大学";
     }
-    NSLog(@"ここは　＝　%@",dic[cate]);
+    
+    NSLog(@"ここは　＝　(int)%@",dic[cate]);
 
 
     
@@ -99,7 +105,7 @@ numberOfRowsInSection:(NSInteger)section
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {//押された瞬間
-    NSLog(@"タップ");
+    NSLog(@"タップしよ");
     _appDelegate.categoryName1 = _categoryName1[indexPath.row];
      _appDelegate.iPath = (int)indexPath.row;
 }
