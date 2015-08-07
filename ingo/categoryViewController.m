@@ -55,6 +55,8 @@
     UILabel *nameLabel = (UILabel *)[cell viewWithTag:2];
     UIImageView *profaileImageView = (UIImageView *)[cell viewWithTag:1];
     
+    
+    
     nameLabel.text = _fesName[indexPath.row];
     
     profaileImageView.image = [UIImage imageNamed:_fesImages[indexPath.row]];
@@ -67,12 +69,20 @@
     
    }
 
+
+
+
+
+
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {//押された瞬間
     NSLog(@"タップ");
-    // AppDelegateのmemberNameに値を渡します。
+    // AppDelegateのcategoryNameに値を渡します。
     _appDelegate.categoryName = _fesName[indexPath.row];
     _appDelegate.categoryImage = _fesImages[indexPath.row];
     _appDelegate.iPath = (int)indexPath.row;//テーブルの何番目かをipathに入れている　ここが押されるとDetail mへ
+    NSLog(@"%@",indexPath);
+    
 }        //左右で型が違う為、indexPathをint型に変換
 
 - (void)didReceiveMemoryWarning {

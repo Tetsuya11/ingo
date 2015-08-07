@@ -19,6 +19,7 @@
 @synthesize categoryImage;
 @synthesize categoryName;
 
+@synthesize categoryName1; //cate1.m で使用
 @synthesize iPath;
 
 

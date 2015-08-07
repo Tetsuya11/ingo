@@ -12,7 +12,7 @@
 
 @interface category1ViewController (){
     
-NSArray *categoryName1;
+NSArray *_categoryName1;
 
 AppDelegate *_appDelegate;
     
@@ -34,34 +34,79 @@ AppDelegate *_appDelegate;
     //読み込むファイルパスを指定
     NSString* path = [bundle pathForResource:@"Property List" ofType:@"plist"];
     
-    NSDictionary* dic = [NSDictionary dictionaryWithContentsOfFile:@"path"];//読み込み？
+    NSDictionary* dic = [NSDictionary dictionaryWithContentsOfFile:path];//読み込み?
     
+    NSString *cate = @""; //*tstの空箱
     
-    
-    NSDictionary *items =[NSDictionary dictionaryWithObjectsAndKeys:[dic objectForKey:@""]];
-    
-    for(NSDictionary* str in items){
+    if(_appDelegate.iPath == 0){
+        cate = @"合コン";
+    }else if(_appDelegate.iPath == 1){
+        cate = @"航空業界";
         
-        NSLog(@"%@",[str objectForKey:@"関ヶ原"]);
-    
     }
+    NSLog(@"ここは　＝　%@",dic[cate]);
+
+
+    
+//    NSString *goukon = @"合コン";
+//    
+//    NSLog(@"全件 = %@",dic);
+//    NSLog(@"合コン用語 = %@",dic[goukon]);
+//    
+//    NSString *seki = @"関ヶ原";
+//    NSString *cate = @"";
+//   
+ //   NSLog(@"%@",dic[cate][seki]);
+//    
+//    NSLog(@"合コンのkey = %@",[dic[goukon] allKeys]);
+//
+    NSArray *ary =[dic[cate] allKeys];
+//    
+//    NSLog(@"キーのary = %@",ary[1]);
+//
+    _categoryName1 = ary;
+//    
+//    NSLog(@"ary%@",_categoryName1);
+//    
 
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(NSInteger)tableView:(UITableView *)tableView
+numberOfRowsInSection:(NSInteger)section
+{
+   return _categoryName1.count;//セル行
+   // return 20;
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    static NSString *CellIdentifier = @"Cell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    
+    UILabel *nameLabel = (UILabel *)[cell viewWithTag:1];
+    
+    nameLabel.text = _categoryName1[indexPath.row];
+    
+    
+    return cell;
 }
-*/
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {//押された瞬間
+    NSLog(@"タップ");
+    _appDelegate.categoryName1 = _categoryName1[indexPath.row];
+     _appDelegate.iPath = (int)indexPath.row;
+}
+
+    - (void)didReceiveMemoryWarning {
+        [super didReceiveMemoryWarning];
+        
+    }
 
 @end

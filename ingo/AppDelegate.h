@@ -12,9 +12,9 @@
 NSString *categoryName;
 NSString *categoryImage;
 NSArray *categoryCommentary;
+
+NSString *categoryName1;
     
-
-
 
 int iPath;
 }
@@ -22,9 +22,11 @@ int iPath;
 @property (nonatomic,strong) NSString *categoryName;
 @property (nonatomic,strong) NSString *categoryImage;
 @property (nonatomic,strong) NSArray *categoryCommentary;
+
 @property (nonatomic,assign) int iPath;
 
 @property (strong, nonatomic) UIWindow *window;
 
+@property (nonatomic,strong)NSString *categoryName1;
 @end
 

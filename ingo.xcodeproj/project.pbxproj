@@ -79,7 +79,7 @@
 		9775A0391B725A9F008DC902 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9775A03B1B726166008DC902 /* category1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = category1ViewController.h; path = ../category1ViewController.h; sourceTree = "<group>"; };
 		9775A03C1B726166008DC902 /* category1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = category1ViewController.m; path = ../category1ViewController.m; sourceTree = "<group>"; };
-		9775A03E1B732CC7008DC902 /* Property List.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Property List.plist"; sourceTree = "<group>"; };
+		9775A03E1B732CC7008DC902 /* Property List.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Property List.plist"; path = "../Property List.plist"; sourceTree = "<group>"; };
 		97F614591B6F3B4100468BA0 /* gameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = gameViewController.h; path = ../gameViewController.h; sourceTree = "<group>"; };
 		97F6145A1B6F3B4100468BA0 /* gameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = gameViewController.m; path = ../gameViewController.m; sourceTree = "<group>"; };
 		97F6145C1B6F3C7A00468BA0 /* count.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = count.jpg; path = images/count.jpg; sourceTree = SOURCE_ROOT; };
@@ -118,7 +118,6 @@
 		972103531B6A505B0007819B = {
 			isa = PBXGroup;
 			children = (
-				9775A03E1B732CC7008DC902 /* Property List.plist */,
 				9721035E1B6A505B0007819B /* ingo */,
 				972103781B6A505B0007819B /* ingoTests */,
 				9721035D1B6A505B0007819B /* Products */,
@@ -193,6 +192,7 @@
 		9721038B1B6A854F0007819B /* images */ = {
 			isa = PBXGroup;
 			children = (
+				9775A03E1B732CC7008DC902 /* Property List.plist */,
 				9775A02E1B7256FC008DC902 /* CA.jpeg */,
 				9775A02F1B7256FC008DC902 /* daigaku.jpeg */,
 				9775A0301B7256FC008DC902 /* goukonn.jpeg */,
