@@ -14,5 +14,10 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *myTableView;
 
+@property (weak,nonatomic) IBOutlet UISearchBar *serchBar;
+
+@property (nonatomic,strong) NSArray *dataSourceCategory;
+
+@property (nonatomic,strong) NSArray *dataSourceSearchResultscategory;
 
 @end
